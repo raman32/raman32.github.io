@@ -27,7 +27,8 @@ const links = [
         heading: "github.com/raman32",
         icon: <GitHubIcon />,
         url: "https://github.com/raman32/"
-    }
+    },
+
 
 ]
 
@@ -36,7 +37,7 @@ export default function ContactCard() {
         <Card>
             <CardContent>
                 <Typography variant='h5' color="text.primary" align='center'>
-                    Reach me !!
+                   Contact me
                 </Typography>
                 <List>
                     {
