@@ -3,18 +3,20 @@ import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 
 const awards = [
     {
-        title: "Merit Based Scholarship",
-        year: "2014-2018",
-        organization: "Institute of Engineering, Tribhuvan University"
+        position: "President",
+        organization: "Society of Mechanical Engineering Student, Tribhuvan University, Nepal",
+        startDate: Date.parse(""),
+        enDate: Date.parse(""),
     },
     {
-        title: "SOMES Engineering Design Champion",
-        year: "2015",
-        organization: "SOMES, Tribhuvan University"
-    }
+        position: "Volunteeer",
+        organization: "Earthquake Relief Program for April 2015 Earthquake Nepal",
+        startDate: Date.parse(""),
+        enDate: Date.parse(""),
+    },
 ]
 
-export default function AwardSection() {
+export default function LeadershipSection() {
     return (
         <Paper sx={{ padding: "1em" }}>
             <Box>

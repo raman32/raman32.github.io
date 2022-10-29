@@ -12,6 +12,7 @@ import ProjectSection from './ProjectSection';
 import EmailIcon from '@mui/icons-material/Email';
 import ShareIcon from '@mui/icons-material/Share';
 import DownloadIcon from '@mui/icons-material/Download';
+import LeadershipSection from './LeadershipSection';
 
 const actions = [
   {
@@ -47,6 +48,10 @@ function App() {
       <div style={{ marginLeft: "1em", marginRight: "1em", marginTop: "1em", justifyContent: "center", }}>
         <AwardSection />
       </div>
+      <div style={{ marginLeft: "1em", marginRight: "1em", marginTop: "1em", justifyContent: "center", }}>
+        <LeadershipSection/>
+      </div>
+      
       <div style={{ marginTop: "1em", justifyContent: "center", }}>
         <ContactCard />
       </div>
