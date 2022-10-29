@@ -13,19 +13,24 @@ import EmailIcon from '@mui/icons-material/Email';
 import ShareIcon from '@mui/icons-material/Share';
 import DownloadIcon from '@mui/icons-material/Download';
 import LeadershipSection from './LeadershipSection';
+import { downloadResume } from './helper';
+import { contactRaman } from './helper';
 
 const actions = [
   {
     name:"Share my portfolio",
-    icon:<ShareIcon/>
+    icon:<ShareIcon/>,
+    onClick: () => navigator.share(window.location.pathname)
   },
   {
     name:"Download Resume",
-    icon:<DownloadIcon/>
+    icon:<DownloadIcon/>,
+    onClick: () => downloadResume()
   },
   {
     name:"Contact Me",
-    icon:<EmailIcon/>
+    icon:<EmailIcon/>,
+    onClick: () => contactRaman()
   }
 ]
 
@@ -65,6 +70,7 @@ function App() {
             key={action.name}
             icon={action.icon}
             tooltipTitle={action.name}
+            onClick={action.onClick}
           />
         ))}
       </SpeedDial>
