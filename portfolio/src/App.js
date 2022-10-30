@@ -15,6 +15,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 import LeadershipSection from './LeadershipSection';
 import { downloadResume } from './helper';
 import { contactRaman } from './helper';
+import { useState } from 'react';
 
 const actions = [
   {
@@ -34,10 +35,18 @@ const actions = [
   }
 ]
 
-
 function App() {
+  const[showBackground,setShowBackground] = useState(true);
   return (
-    <div style={{ backgroundColor: "#fcead1" }}>
+    <div style={{ backgroundImage:"linear-gradient(to right top, #051937, #133660, #1d578d, #1f7abb, #12a0eb)" , minHeight:"100vh", overflow:"clip"}}>
+    <div style={{ position:"fixed", top:0, left:0, minHeight:"100vh", minWidth:"100vw", zIndex: showBackground ? "2" : "-1", backgroundImage:"url(background.png)" ,backgroundSize:"50%", backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundAttachment:"fixed",}}
+    onClick={(event)=>{
+      setShowBackground(false);
+      setTimeout(()=>document.elementFromPoint(event.pageX, event.pageY).click())
+    }}
+    >
+    </div>
+      <div style={{ height:"calc(100vh - 70px)", overflowY:"scroll", overflowX:"clip"}}>
       <Typography variant="h2" gutterBottom align="center" >
         Raman Ghimire
       </Typography>
@@ -56,9 +65,11 @@ function App() {
       <div style={{ marginLeft: "1em", marginRight: "1em", marginTop: "1em", justifyContent: "center", }}>
         <LeadershipSection/>
       </div>
-      
-      <div style={{ marginTop: "1em", justifyContent: "center", }}>
+      </div>
+      <div>
+      <div style={{ justifyContent: "center", }}>
         <ContactCard />
+      </div>
       </div>
       <SpeedDial  
         ariaLabel="SpeedDial basic example"
@@ -74,6 +85,7 @@ function App() {
           />
         ))}
       </SpeedDial>
+   
     </div>
   );
 }

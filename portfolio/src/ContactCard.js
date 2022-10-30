@@ -11,22 +11,26 @@ import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
-
+import { Box, height } from '@mui/system';
+import "./App.css"
 const links = [
     {
         heading: "linkedin.com/in/ramanghimire",
         icon: <LinkedInIcon />,
-        url: "https://www.linkedin.com/in/ramanghimire/"
+        url: "https://www.linkedin.com/in/ramanghimire/",
+        color:"blue"
     },
     {
         heading: "rg.raman.ghimire@gmail.com",
         icon: <EmailIcon />,
-        url: "mailto:rg.raman.ghimire@gmail.com"
+        url: "mailto:rg.raman.ghimire@gmail.com",
+        color:"red"
     },
     {
         heading: "github.com/raman32",
         icon: <GitHubIcon />,
-        url: "https://github.com/raman32/"
+        url: "https://github.com/raman32/",
+        color:"black"
     },
 
 
@@ -34,31 +38,20 @@ const links = [
 
 export default function ContactCard() {
     return (
-        <Card>
-            <CardContent>
-                <Typography variant='h5' color="text.primary" align='center'>
-                   Contact me
-                </Typography>
-                <List>
-                    {
-                        links.map((ele, idx) => (
-                            <div key={idx}>
-                                <ListItem sx={{ cursor: "pointer" }} onClick={() => { window.open(ele.url, "_blank") }}>
-                                    <ListItemAvatar>
-                                        <Avatar>
-                                            {ele.icon}
-                                        </Avatar>
-                                    </ListItemAvatar>
-                                    <ListItemText primary={<Typography color="text.secondary">
-                                        {ele.heading}
-                                    </Typography>} />
-                                </ListItem>
-                                {idx < links.length - 1 && <Divider variant="inset" component="li" />}
-                            </div>
-                        ))
-                    }
-                </List>
-            </CardContent>
-        </Card>
+        <Box sx={{ bottom: 0, width:"100vw"}}>
+            <div style={{ display: "flex", justifyContent:"space-evenly" }}>
+                {
+                    links.map((ele, idx) => (
+                        <div key={idx} className="ContactCard"
+                         onClick={() => { window.open(ele.url, "_blank") }} > 
+                            <div style={{color:ele.color, marginRight:"1em"}}>{ele.icon}</div>
+                            <div>{ele.heading}</div>
+                        </div>
+                    ))
+                }
+            </div>
+
+
+        </Box>
     )
 }

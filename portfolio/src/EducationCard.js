@@ -2,10 +2,14 @@ import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import SchoolIcon from '@mui/icons-material/School';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Divider from '@mui/material/Divider';
 import moment from 'moment'
+import { Accordion, AccordionDetails } from '@mui/material';
+import { AccordionSummary } from '@mui/material';
+
 
 const educations = [
     {
@@ -40,11 +44,17 @@ const educations = [
 
 export default function EducationCard() {
     return (
-        <Card>
-            <CardContent>
-                <Typography variant='h4' fontSize={30} color="text.primary" align='left' margin={1}>
+        <Accordion>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+            >
+                <Typography variant='h4' color="text.primary" align='left'>
                     <SchoolIcon /> Education
                 </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
                 <List>
                     {
                         educations.map((ele, idx) => (
@@ -77,7 +87,7 @@ export default function EducationCard() {
                         ))
                     }
                 </List>
-            </CardContent>
-        </Card>
+            </AccordionDetails>
+        </Accordion>
     )
 }

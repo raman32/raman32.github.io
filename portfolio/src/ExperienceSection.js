@@ -1,7 +1,10 @@
-import { Box, Paper, Switch, Typography } from "@mui/material";
+import { Switch, Typography } from "@mui/material";
 import { useState } from "react"
 import BadgeIcon from '@mui/icons-material/Badge';
 import ExperienceCard from "./ExperienceCard";
+import { Accordion, AccordionDetails } from '@mui/material';
+import { AccordionSummary } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const experiences = [
     {
@@ -42,10 +45,10 @@ const experiences = [
         tags: ["Software", "Frontend", "Ed Tech", "Visualization"],
         stacksUsed: ["React", "Next JS", "Flask", "Tailwind css", "JavaScript"],
         tasks: ["Architected an e-learning web application ( www.clamphook.com ) currently having 50000+ users.",
-        "Improved loading time by 40% and users’ retention by 25% by generating static pages for onboarding",
-        "Revamped support for Latex, Markdown, and Smiles Components and decreased render time by 50%",
-        "Mentored and led a team of 5 for frontend development",
-        "Designed and programmed subscriptions and a customized dashboard for students"],
+            "Improved loading time by 40% and users’ retention by 25% by generating static pages for onboarding",
+            "Revamped support for Latex, Markdown, and Smiles Components and decreased render time by 50%",
+            "Mentored and led a team of 5 for frontend development",
+            "Designed and programmed subscriptions and a customized dashboard for students"],
     },
     {
         title: "Software Engineer",
@@ -58,7 +61,7 @@ const experiences = [
         stacksUsed: ["C++", "openGL", "CUDA", "Boost", "C#", "Windows Application", "Visualization"],
         tasks: ["Coded a program for physics simulation using 1000000 particles  ",
             "Implemented CUDA for parallel processing, decreasing calculation time by 20 folds.",
-            ],
+        ],
     },
 
 ]
@@ -66,16 +69,20 @@ const experiences = [
 export default function ExperienceSection() {
     const [showRelevant, setShowRelevant] = useState(true);
     return (
-        <Paper>
-            <Box sx={{ marginLeft: "1em", marginRight: "1em", paddingTop: "1em" }}>
-                <Typography variant='h4' fontSize={30} color="text.primary" align='left' margin={1}>
+        <Accordion>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+            >
+                <Typography variant='h4' color="text.primary" align='left'>
                     <BadgeIcon /> Experience
                 </Typography>
-            </Box>
-            <Box>
+            </AccordionSummary>
+            <AccordionDetails>
                 <Switch checked={showRelevant} onChange={(_, value) => setShowRelevant(value)} /> Show Only Relevant Experience
-            </Box>
-            {experiences.map((ele, idx) => <ExperienceCard key={idx} {...ele} />)}
-        </Paper>
+                {experiences.map((ele, idx) => <ExperienceCard key={idx} {...ele} />)}
+            </AccordionDetails>
+        </Accordion>
     )
 }

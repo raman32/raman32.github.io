@@ -3,6 +3,10 @@ import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { useState } from "react"
 import ProjectCard from "./ProjectCard"
 import TerminalIcon from '@mui/icons-material/Terminal';
+import { Accordion, AccordionDetails } from '@mui/material';
+import { AccordionSummary } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 const projects = [
     {
@@ -102,11 +106,11 @@ const projects = [
         associatedWith: "Course Project for Deep Learning",
         company: "University at Buffalo",
         category: ["Artificial Intelligence"],
-        tags: ["Deep Learning", "Encoder Decoder Network", "Attention Network","Multiclass Classificaiton"],
+        tags: ["Deep Learning", "Encoder Decoder Network", "Attention Network", "Multiclass Classificaiton"],
         stacksUsed: ["PyTorch", "Python", "ChemicalX"],
         tasks: ["Created a encoder deccoder network to decrease the number of feature in the final classification Network",
             "Employed Self Attention Network for capturing the structural infomation in the molecular oreintation of the compounds",
-        "Used CNN for final multiclass classificaiton."],
+            "Used CNN for final multiclass classificaiton."],
     },
     {
         title: "",
@@ -116,11 +120,11 @@ const projects = [
         associatedWith: "Course Project for Deep Learning",
         company: "University at Buffalo",
         category: ["Artificial Intelligence"],
-        tags: ["Deep Learning", "Encoder Decoder Network", "Attention Network","Multiclass Classificaiton"],
+        tags: ["Deep Learning", "Encoder Decoder Network", "Attention Network", "Multiclass Classificaiton"],
         stacksUsed: ["PyTorch", "Python", "ChemicalX"],
         tasks: ["Created a encoder deccoder network to decrease the number of feature in the final classification Network",
             "Employed Self Attention Network for capturing the structural infomation in the molecular oreintation of the compounds",
-        "Used CNN for final multiclass classificaiton."],
+            "Used CNN for final multiclass classificaiton."],
     },
 
 ]
@@ -128,15 +132,20 @@ const projects = [
 export default function ProjectSection() {
     const [section, setSection] = useState("1");
     return (
-        <Paper>
-            <Box sx={{marginLeft:"1em", marginRight:"1em", paddingTop:"1em"}}>
-             <Typography variant='h4' fontSize={30} color="text.primary" align='left' margin={1}>
+        <Accordion>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header">
+                <Typography variant='h4' color="text.primary" align='left'>
                     <TerminalIcon /> Projects
-            </Typography>
-            </Box>
+                </Typography>
+
+            </AccordionSummary>
+
             <TabContext value={section}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <TabList onChange={(_,value)=>setSection(value)} aria-label="Project Catergory Tab">
+                    <TabList onChange={(_, value) => setSection(value)} aria-label="Project Catergory Tab">
                         <Tab label="Software Engineering" value="1" />
                         <Tab label="Artificial Engineering" value="2" />
                         <Tab label="Blockchain" value="3" />
@@ -144,21 +153,21 @@ export default function ProjectSection() {
                 </Box>
                 <TabPanel value="1">
                     {
-                        projects.filter((ele)=>ele.category.includes("Software Engineering")).map((ele, idx) => <ProjectCard key={idx} {...ele} />)
+                        projects.filter((ele) => ele.category.includes("Software Engineering")).map((ele, idx) => <ProjectCard key={idx} {...ele} />)
                     }
                 </TabPanel >
                 <TabPanel value="2">
                     {
-                        projects.filter((ele)=>ele.category.includes("Artificial Intelligence")).map((ele, idx) => <ProjectCard key={idx} {...ele} />)
+                        projects.filter((ele) => ele.category.includes("Artificial Intelligence")).map((ele, idx) => <ProjectCard key={idx} {...ele} />)
                     }
                 </TabPanel >
                 <TabPanel value="3">
                     {
-                        projects.filter((ele)=>ele.category.includes("Blockchain")).map((ele, idx) => <ProjectCard key={idx} {...ele} />)
+                        projects.filter((ele) => ele.category.includes("Blockchain")).map((ele, idx) => <ProjectCard key={idx} {...ele} />)
                     }
                 </TabPanel >
             </TabContext>
 
-        </Paper>
+        </Accordion>
     )
 }

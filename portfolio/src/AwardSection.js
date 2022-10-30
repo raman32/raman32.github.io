@@ -1,5 +1,9 @@
 import { Box, Paper, Typography } from "@mui/material";
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
+import { Accordion, AccordionDetails } from '@mui/material';
+import { AccordionSummary } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 
 const awards = [
     {
@@ -16,11 +20,18 @@ const awards = [
 
 export default function AwardSection() {
     return (
-        <Paper sx={{ padding: "1em" }}>
-            <Box>
-                <Typography variant='h4' color="text.primary" align='left' margin={1}>
+        <Accordion>
+            <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+            >
+                <Typography variant='h4' color="text.primary" align='left'>
                     <EmojiEventsIcon /> Awards
                 </Typography>
+                
+            </AccordionSummary>
+            <AccordionDetails>
                 <Box sx={{ marginLeft: "1em" }}>
                     {
                         awards.map((awardContent, idx) => (<Box key={idx} style={{ marginBottom: "1em" }}>
@@ -35,7 +46,8 @@ export default function AwardSection() {
                         ))
                     }
                 </Box>
-            </Box>
-        </Paper>
+            </AccordionDetails>
+            
+        </Accordion>
     )
 }

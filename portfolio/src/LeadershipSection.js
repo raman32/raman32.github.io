@@ -1,7 +1,9 @@
 import { Box, Paper, Typography } from "@mui/material";
 import GroupsIcon from '@mui/icons-material/Groups';
 import moment from 'moment';
-
+import { Accordion, AccordionDetails } from '@mui/material';
+import { AccordionSummary } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const leaderships = [
     {
@@ -20,26 +22,26 @@ const leaderships = [
 
 export default function LeadershipSection() {
     return (
-        <Paper sx={{ padding: "1em" }}>
-            <Box>
-                <Typography variant='h4' color="text.primary" align='left' margin={1}>
+        <Accordion >
+            <AccordionSummary expandIcon={<ExpandMoreIcon/>}>
+                <Typography variant='h4' color="text.primary" align='left' >
                     <GroupsIcon /> Leadership
                 </Typography>
-                <Box sx={{ marginLeft: "1em" }}>
-                    {
-                        leaderships.map((leadershipsContent, idx) => (<Box key={idx} style={{ marginBottom: "1em" }}>
-                            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                                <Typography>{leadershipsContent.position}</Typography>
-                                <Typography sx={{ fontStyle: "italic" }} color="text.secondary">{moment(leadershipsContent.startDate).format("MMM YYYY")}{"-"}{moment(leadershipsContent.enDate).format("MMM YYYY")}</Typography>
-                            </Box>
-                            <Typography sx={{ fontStyle: "italic" }} color="text.secondary" >
-                                {leadershipsContent.organization}
-                            </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                {
+                    leaderships.map((leadershipsContent, idx) => (<Box key={idx} style={{ marginBottom: "1em" }}>
+                        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+                            <Typography>{leadershipsContent.position}</Typography>
+                            <Typography sx={{ fontStyle: "italic" }} color="text.secondary">{moment(leadershipsContent.startDate).format("MMM YYYY")}{"-"}{moment(leadershipsContent.enDate).format("MMM YYYY")}</Typography>
                         </Box>
-                        ))
-                    }
-                </Box>
-            </Box>
-        </Paper>
+                        <Typography sx={{ fontStyle: "italic" }} color="text.secondary" >
+                            {leadershipsContent.organization}
+                        </Typography>
+                    </Box>
+                    ))
+                }
+            </AccordionDetails>
+        </Accordion>
     )
 }
