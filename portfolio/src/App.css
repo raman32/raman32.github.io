@@ -44,14 +44,68 @@
   cursor: pointer;
   background-color: whitesmoke;
   padding-left: 1em;
-  padding-right: 1em;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   border-radius: 44px;
   height: 44px;
+  min-width: 44px;
   box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
 }
 
 .ContactCard:hover {
   background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .ContactCardText {
+      display: none;
+  }
+}
+.twelve {
+  padding: 1em;
+}
+
+.twelve h1 {
+  font-size:26px; font-weight:700;  letter-spacing:1px; text-transform:uppercase; width:160px; text-align:center; margin:auto; white-space:nowrap; padding-bottom:13px;
+}
+.twelve h1:before {
+    background-color: #c50000;
+    content: '';
+    display: block;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 5px;
+}
+.twelve h1:after {
+    background-color: #c50000;
+    content: '';
+    display: block;
+  position:absolute; left:9.5rem; bottom:0;
+    height: 3px;
+    width: 75px;
+    margin-bottom: 0.25em;
+}
+
+
+h1 {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-size: 40px;
+  color: #080808;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+h1 span {
+  display: block;
+  font-size: 0.5em;
+  line-height: 1.3;
+}
+h1 em {
+  font-style: normal;
+  font-weight: 600;
 }

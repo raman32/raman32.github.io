@@ -47,9 +47,9 @@ function App() {
     >
     </div>
       <div style={{ height:"calc(100vh - 70px)", overflowY:"scroll", overflowX:"clip"}}>
-      <Typography variant="h2" gutterBottom align="center" >
-        Raman Ghimire
-      </Typography>
+      <div className="twelve">
+        <h1 className="MyName">Raman Ghimire</h1>
+    </div>
       <div style={{ marginLeft: "1em", marginRight: "1em", marginTop: "1em", justifyContent: "center", }}>
         <EducationCard />
       </div>

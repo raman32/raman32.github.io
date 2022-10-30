@@ -45,7 +45,7 @@ export default function ContactCard() {
                         <div key={idx} className="ContactCard"
                          onClick={() => { window.open(ele.url, "_blank") }} > 
                             <div style={{color:ele.color, marginRight:"1em"}}>{ele.icon}</div>
-                            <div>{ele.heading}</div>
+                            <div style={{paddingRight:"1em"}} className="ContactCardText">{ele.heading}</div>
                         </div>
                     ))
                 }
