@@ -39,13 +39,6 @@ function App() {
   const[showBackground,setShowBackground] = useState(true);
   return (
     <div style={{ backgroundImage:"linear-gradient(to right top, #051937, #133660, #1d578d, #1f7abb, #12a0eb)" , minHeight:"100vh", overflow:"clip"}}>
-    <div style={{ position:"fixed", top:0, left:0, minHeight:"100vh", minWidth:"100vw", zIndex: showBackground ? "2" : "-1", backgroundImage:"url(background.png)" ,backgroundSize:"50%", backgroundRepeat:"no-repeat", backgroundPosition:"center", backgroundAttachment:"fixed",}}
-    onClick={(event)=>{
-      setShowBackground(false);
-      setTimeout(()=>document.elementFromPoint(event.pageX, event.pageY).click())
-    }}
-    >
-    </div>
       <div style={{ height:"calc(100vh - 70px)", overflowY:"scroll", overflowX:"clip"}}>
       <div className="twelve">
         <h1 className="MyName">Raman Ghimire</h1>
