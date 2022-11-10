@@ -3,7 +3,6 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from '@mui/material';
-import Typography from '@mui/material/Typography';
 import AwardSection from './AwardSection';
 import ContactCard from './ContactCard';
 import EducationCard from './EducationCard';
@@ -15,7 +14,6 @@ import DownloadIcon from '@mui/icons-material/Download';
 import LeadershipSection from './LeadershipSection';
 import { downloadResume } from './helper';
 import { contactRaman } from './helper';
-import { useState } from 'react';
 
 const actions = [
   {
@@ -36,7 +34,6 @@ const actions = [
 ]
 
 function App() {
-  const[showBackground,setShowBackground] = useState(true);
   return (
     <div style={{ backgroundImage:"linear-gradient(to right top, #051937, #133660, #1d578d, #1f7abb, #12a0eb)" , minHeight:"100vh", overflow:"clip"}}>
       <div style={{ height:"calc(100vh - 70px)", overflowY:"scroll", overflowX:"clip"}}>

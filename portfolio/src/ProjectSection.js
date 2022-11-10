@@ -1,9 +1,9 @@
-import { Box, Button, ButtonGroup, Paper, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Typography } from "@mui/material";
 import { TabContext, TabList, TabPanel } from '@mui/lab';
 import { useState } from "react"
 import ProjectCard from "./ProjectCard"
 import TerminalIcon from '@mui/icons-material/Terminal';
-import { Accordion, AccordionDetails } from '@mui/material';
+import { Accordion } from '@mui/material';
 import { AccordionSummary } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -75,7 +75,7 @@ const projects = [
         title: "Pinto-OS",
         link: "https://gitlab.com/SCoRe-Group/scool",
         github: "https://gitlab.com/SCoRe-Group/scool",
-        description: "A mini RDBMS",
+        description: "A mini Operating System",
         associatedWith: "Course Project for Operating Systems",
         company: "University at Buffalo",
         category: ["Software Engineering"],
@@ -113,19 +113,19 @@ const projects = [
             "Used CNN for final multiclass classificaiton."],
     },
     {
-        title: "",
+        title: "Blockchain Assets Managent",
         link: "https://gitlab.com/SCoRe-Group/scool",
         github: "https://gitlab.com/SCoRe-Group/scool",
-        description: "A new model to solve the drug-drug pair interaction task",
+        description: "A smart contract based verification system for authenticity of digital assests that are minted.",
         associatedWith: "Course Project for Deep Learning",
         company: "University at Buffalo",
-        category: ["Artificial Intelligence"],
-        tags: ["Deep Learning", "Encoder Decoder Network", "Attention Network", "Multiclass Classificaiton"],
-        stacksUsed: ["PyTorch", "Python", "ChemicalX"],
-        tasks: ["Created a encoder deccoder network to decrease the number of feature in the final classification Network",
-            "Employed Self Attention Network for capturing the structural infomation in the molecular oreintation of the compounds",
-            "Used CNN for final multiclass classificaiton."],
-    },
+        category: ["Blockchain"],
+        tags: ["Solana", "Solidity", "web3.js", "Crypto","Hashing","NFT"],
+        stacksUsed: ["Solana", "Solidity","Web3.js","Crypto.js","NFT"],
+        tasks: ["Created smart contracts using Solana and Solidity for miniting digital assest.",
+            "Devised a technique to verify the hash of the digital assest before it allowed to be minted."
+        ],
+    }
 
 ]
 
