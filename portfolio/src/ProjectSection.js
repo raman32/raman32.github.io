@@ -147,7 +147,7 @@ export default function ProjectSection() {
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={(_, value) => setSection(value)} aria-label="Project Catergory Tab">
                         <Tab label="Software Engineering" value="1" />
-                        <Tab label="Artificial Engineering" value="2" />
+                        <Tab label="Artificial Intelligence" value="2" />
                         <Tab label="Blockchain" value="3" />
                     </TabList>
                 </Box>
