@@ -35,10 +35,10 @@ const actions = [
 
 function App() {
   return (
-    <div style={{ backgroundImage:"linear-gradient(to right top, #051937, #133660, #1d578d, #1f7abb, #12a0eb)" , minHeight:"100vh", overflow:"clip"}}>
+    <div style={{ backgroundImage:"url(background.jpg)" ,backgroundSize:"cover", backgroundRepeat:"no-repeat" , minHeight:"100vh", overflow:"clip"}}>
       <div style={{ height:"calc(100vh - 70px)", overflowY:"scroll", overflowX:"clip"}}>
       <div className="twelve">
-        <h1 className="MyName">Raman Ghimire</h1>
+        <h1 className="MyName" style={{color:"white"}}>Raman Ghimire</h1>
     </div>
       <div style={{ marginLeft: "1em", marginRight: "1em", marginTop: "1em", justifyContent: "center", }}>
         <EducationCard />
